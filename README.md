@@ -1,14 +1,14 @@
-# nginx-fancyindex-docker
+# nginx-webdav-docker
 
-An Alpine Docker container that runs nginx along with the fancyindex mod.
+An Alpine Docker container that runs nginx as a WebDAV server.
 
 
 # Usage:
 
-Usage is very simple, as there is very little this container actually does.
+Usage is very simple, as there is very little this container actually does. No TLS, no authentication. All of that should be handled on a Reverse Proxy.
 
 ```
-docker run --name nginx-fancyindex -p 80:80 -v /path/to/content:/srv/:ro -d registry.gitlab.draigon.org/ndebruin/nginx-fancyindex-docker:latest
+docker run --name nginx-webdav -p 80:80 -v /path/to/content:/srv/:rw -d ghcr.io/ndebruin/nginx-webdav-docker:latest
 ```
 
 You can change the port number.
